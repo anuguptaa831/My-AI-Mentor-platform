@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background: #1a1a1a;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+}
+
+.app-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden; /* Scroll sirf chat box mein hoga */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background: #202123;
+    color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.new-chat-btn {
+    background: transparent;
+    border: 1px solid #4d4d4d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.new-chat-btn:hover {
+    background: #2b2c2f;
+}
+
+.history-title {
+    font-size: 12px;
+    color: #8e8ea0;
+    margin-bottom: 10px;
+}
+
+.history-list ul {
+    list-style: none;
+}
+
+.history-list li {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.history-list li:hover {
+    background: #2b2c2f;
+}
+
+/* Chat Container adjustment */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 40px 15% 20px 15%; /* Chat ko center mein dikhane ke liye */
+    overflow-y: auto;
+}
+
+.message {
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.ai-message { background: #f7f7f8; align-self: flex-start; border: 1px solid #e5e5e5; }
+.user-message { background: #fff; align-self: flex-end; border: 1px solid #d9d9e3; }
+
+.input-area {
+    padding: 20px 15%;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Mobile Menu Button - Default mein chhupa rahega */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Media Query: Jab screen 768px se chhoti ho */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block; /* Mobile par dikhega */
+    }
+
+    .sidebar {
+        position: absolute;
+        left: -260px; /* Shuruwat mein screen se bahar */
+        height: 100%;
+        z-index: 100;
+        transition: 0.3s;
+    }
+
+    /* Jab sidebar open ho */
+    .sidebar.active {
+        left: 0;
+    }
+
+    .chat-box, .input-area {
+        padding: 20px 5%; /* Mobile par margins kam kar di */
+    }
+}
+
+/* Markdown Styling */
+.ai-message pre {
+    background: #282c34;
+    color: #abb2bf;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+.ai-message code {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}

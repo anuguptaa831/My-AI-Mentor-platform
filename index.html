@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mentor - Prototype</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <button class="menu-btn" id="menuBtn">☰</button>
+        <div class="logo">AI Mentor</div>
+        <div class="user-profile">Profile</div>
+    </nav>
+
+    <div class="app-body">
+        <aside class="sidebar">
+            <button class="new-chat-btn">+ New Chat</button>
+            <div class="history-list">
+                <p class="history-title">Recent Chats</p>
+                <ul>
+                    <li>Project Discussion</li>
+                    <li>Frontend Logic</li>
+                    <li>UI/UX Design</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="chat-container">
+            <div class="chat-box" id="chatBox">
+                <div class="message ai-message">Hello! I am your AI mentor.BY the help of sidebar you can see the recent
+                    chats.</div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Ask anything...">
+                <button id="sendBtn">Send</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
