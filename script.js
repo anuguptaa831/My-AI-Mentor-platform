@@ -22,7 +22,7 @@ async function sendMessage() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            }, // Yahan ye bracket aur comma lagana zaroori hai
+            }, 
             body: JSON.stringify({ message: text })
         });
         const data = await response.json();
@@ -36,7 +36,7 @@ async function sendMessage() {
 
     } catch (error) {
         console.error("Error:", error);
-        addMessage("Server connect nahi ho raha. Kya 'node server.js' chal raha hai?", 'ai-message');
+        addMessage("The server is not connecting. Check if 'node server.js' is currently running", 'ai-message');
     }
 }
 // 2.chat mein message display karne k common function
