@@ -31,7 +31,7 @@ async function sendMessage() {
         if (data.reply) {
             addMessage(data.reply, 'ai-message');
         } else {
-            addMessage("Kshama karein, AI se jawab nahi mil paya.", 'ai-message');
+            addMessage("I am sorry,I couldn't get a response from the AI", 'ai-message');
         }
 
     } catch (error) {
